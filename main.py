@@ -20,7 +20,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # To be replaced when published
+    allow_origins=["https://jacksonngreer.github.io"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -82,7 +82,7 @@ Analyze this:
 ---
 """
 
-    model = genai.GenerativeModel("gemini-1.5-flash")  # Or "gemini-2.5-flash-lite"
+    model = genai.GenerativeModel("models/gemini-2.5-flash")
 
     response = model.generate_content(prompt)
     return { "result": response.text }
