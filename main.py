@@ -32,6 +32,7 @@ class AnalyzeRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze(request: AnalyzeRequest):
+    demo_url = "https://jacksonngreer.github.io/assets/qed-demo.mp4"
 #     user_input = request.text
 
 #     # Full prompt with user input inserted
@@ -88,5 +89,9 @@ def analyze(request: AnalyzeRequest):
 #     return { "result": response.text }
 
     return {
-        "result": "QED is temporarily unavailable to prioritize resources for other projects. Demo video will be added shortly."
+        "result": (
+            "QED is temporarily unavailable to prioritize resources for other projects."
+            f"<br><br><a href='{demo_url}' target='_blank' style='color:#60a5fa;'>"
+            "Watch the demo video here</a>."
+        )
     }
