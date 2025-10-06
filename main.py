@@ -8,23 +8,23 @@ import os
 
 load_dotenv()
 
-API_KEY = os.getenv("GOOGLE_API_KEY") #API key environment var for security
-if not API_KEY:
-    raise ValueError("Missing GOOGLE_API_KEY in environment")
+# API_KEY = os.getenv("GOOGLE_API_KEY") #API key environment var for security
+# if not API_KEY:
+#     raise ValueError("Missing GOOGLE_API_KEY in environment")
 
 
-genai.configure(api_key=API_KEY)
+# genai.configure(api_key=API_KEY)
 
 
-app = FastAPI()
+# app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["https://jacksonngreer.github.io"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["https://jacksonngreer.github.io"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 
 class AnalyzeRequest(BaseModel):
